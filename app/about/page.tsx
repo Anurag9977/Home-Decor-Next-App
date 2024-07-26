@@ -16,12 +16,12 @@ function AboutPage() {
         >
           Home Decor
         </span>{" "}
-        began with a simple mission: to bring the best-in-class furniture to
+        {`began with a simple mission: to bring the best-in-class furniture to
         your home and office. Back then, furniture shopping felt like a chore -
         impersonal stores with generic options. We envisioned a different
         experience, a place where you could discover unique pieces that
         reflected your style and created inspiring spaces. That's the fire that
-        ignited our journey, and it's still what fuels us today.
+        ignited our journey, and it's still what fuels us today.`}
       </p>
     </main>
   );

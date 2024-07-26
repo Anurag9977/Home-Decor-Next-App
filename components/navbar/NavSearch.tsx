@@ -7,12 +7,10 @@ import { useDebouncedCallback } from "use-debounce";
 
 function NavSearch() {
   const searchParams = useSearchParams();
-
+  const searchText = searchParams.get("search");
   const navigate = useRouter();
 
-  const [search, setSearch] = useState<string>(
-    searchParams.get("search")?.toString() || ""
-  );
+  const [search, setSearch] = useState<string>(searchText?.toString() || "");
 
   const handleSearch = useDebouncedCallback((value: string) => {
     const urlParams = new URLSearchParams(searchParams);
@@ -25,12 +23,12 @@ function NavSearch() {
   }, 300);
 
   useEffect(() => {
-    if (searchParams.get("search")) {
-      setSearch(searchParams.get("search") as string);
+    if (searchText) {
+      setSearch(searchText as string);
     } else {
       setSearch("");
     }
-  }, [searchParams.get("search")]);
+  }, [searchText]);
 
   return (
     <Input
