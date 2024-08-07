@@ -2,9 +2,9 @@ import { formatPrice } from "@/utils/formatPrice";
 import { Product } from "@prisma/client";
 import Image from "next/image";
 import { Separator } from "../ui/separator";
-import FavouriteToggleButton from "./FavouriteToggleButton";
 import React from "react";
 import Link from "next/link";
+import FavouriteToggleButton from "./FavouriteToggleButton";
 
 function ProductsList({ products }: { products: Product[] }) {
   return (
@@ -38,7 +38,7 @@ function ProductsList({ products }: { products: Product[] }) {
               </Link>
               <section className="w-full md:w-max md:h-full flex flex-row md:flex-col justify-between items-center md:items-end">
                 <h1 className="text-lg tracking-wide">{formatPrice(price)}</h1>
-                <FavouriteToggleButton />
+                <FavouriteToggleButton productID={id} />
               </section>
             </article>
             <Separator className="my-4" />

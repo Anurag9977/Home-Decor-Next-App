@@ -2,8 +2,8 @@ import { formatPrice } from "@/utils/formatPrice";
 import { Product } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
-import FavouriteToggleButton from "./FavouriteToggleButton";
 import { rubik } from "@/utils/fonts";
+import FavouriteToggleButton from "./FavouriteToggleButton";
 
 function ProductsGrid({ products }: { products: Product[] }) {
   return (
@@ -13,25 +13,25 @@ function ProductsGrid({ products }: { products: Product[] }) {
         return (
           <article key={id} className="relative">
             <Link href={`/products/${id}`}>
-              <div className="relative h-56">
+              <div className="relative h-56 rounded-lg overflow-hidden">
                 <Image
                   src={image}
                   alt={name}
                   fill
                   priority
                   sizes="(max-width : 768px) 100vw, (max-width:1024px) 50vw, 33vw"
-                  className="object-cover w-full rounded-lg hover:scale-105 duration-300"
+                  className="object-cover w-full hover:scale-105 duration-300"
                 />
               </div>
               <div className="mt-2 flex justify-between">
                 <h2 className="capitalize tracking-wide">{name}</h2>
-                <p className={`${rubik.className} text-lg tracking-wide`}>
+                <p className={`${rubik.className} tracking-wide`}>
                   {formatPrice(price)}
                 </p>
               </div>
             </Link>
             <div className="absolute top-3 right-3">
-              <FavouriteToggleButton />
+              <FavouriteToggleButton productID={id} />
             </div>
           </article>
         );

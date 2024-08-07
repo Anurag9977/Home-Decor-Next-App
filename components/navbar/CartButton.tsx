@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { Button } from "../ui/button";
+import { getNumOfItemsInCart } from "@/utils/actions";
 async function CartButton() {
-  const numOfItemsInCart = 10;
+  const numOfItemsInCart = await getNumOfItemsInCart();
   return (
     <Button
       asChild

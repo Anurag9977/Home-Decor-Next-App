@@ -14,14 +14,17 @@ function BreadCrumbs({ name }: { name: string }) {
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink className="tracking-wider capitalize">
-            <Link href="/">home</Link>
+          <BreadcrumbLink href="/" className="tracking-wider capitalize">
+            home
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink className="tracking-wider capitalize">
-            <Link href="/products">products</Link>
+          <BreadcrumbLink
+            href="/products"
+            className="tracking-wider capitalize"
+          >
+            products
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />

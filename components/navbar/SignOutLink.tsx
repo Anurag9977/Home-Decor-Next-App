@@ -5,7 +5,7 @@ import Link from "next/link";
 import { toast } from "../ui/use-toast";
 
 function handleSignOut() {
-  toast({ description: "Logged out successfully." });
+  toast({ description: "Logging out..." });
 }
 function SignOutLink() {
   return (

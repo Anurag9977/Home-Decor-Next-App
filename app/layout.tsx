@@ -17,8 +17,8 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body className={rubik.className} suppressHydrationWarning>
+      <html lang="en" suppressHydrationWarning>
+        <body className={rubik.className}>
           <Providers>
             <Navbar />
             <Container className="py-20">{children}</Container>

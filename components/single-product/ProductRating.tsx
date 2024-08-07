@@ -1,16 +1,24 @@
+import { getProductRatings } from "@/utils/actions";
 import { FaStar } from "react-icons/fa6";
 
-function ProductRating() {
-  const stars = 4.5;
-  const reviews = 2;
+async function ProductRating({ productID }: { productID: string }) {
+  const { averageRating, totalRatings } = await getProductRatings({
+    productID,
+  });
   return (
-    <div className="my-2 flex items-center gap-4 text-sm text-muted-foreground">
-      <div className="flex items-center gap-1">
-        <h2>{stars}</h2>
-        <FaStar className="mb-[5px]" />
-      </div>
-      <h2>{`(${reviews} customer reviews)`} </h2>
-    </div>
+    <>
+      {totalRatings !== 0 && (
+        <div className="my-2 flex items-center gap-2 text-sm text-muted-foreground">
+          <div className="flex items-center gap-1">
+            <h2>{averageRating}</h2>
+            <FaStar className="mb-[3px]" />
+          </div>
+          <h2>
+            {`(${totalRatings} customer review${totalRatings > 1 ? "s" : ""})`}
+          </h2>
+        </div>
+      )}
+    </>
   );
 }
 export default ProductRating;
