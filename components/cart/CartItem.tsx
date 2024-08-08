@@ -22,25 +22,23 @@ function SingleCartItem({ productInfo, id, amount }: CartItemProps) {
   return (
     <article className="grid grid-cols-[2fr_1fr_1fr] gap-3 md:gap-4 border border-muted rounded-lg p-2 md:p-4 mb-4">
       <div className="flex gap-3 md:gap-4">
-        <Link
-          href={`/products/${productInfo.productID}`}
-          as={`/products/${productInfo.productID}`}
-        >
-          <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-lg overflow-hidden">
-            <Image
-              src={productInfo.image}
-              alt={productInfo.name}
-              fill
-              sizes="(max-width : 768px) 100vw, (max-width:1024px) 50vw, 33vw"
-              priority
-              className="block w-full object-cover hover:scale-105 duration-300"
-            />
-          </div>
-        </Link>
+        <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-lg overflow-hidden">
+          <Image
+            src={productInfo.image}
+            alt={productInfo.name}
+            fill
+            sizes="(max-width : 768px) 100vw, (max-width:1024px) 50vw, 33vw"
+            priority
+            className="block w-full object-cover hover:scale-105 duration-300"
+          />
+        </div>
         <div>
-          <h1 className="text-sm lg:text-base tracking-wide">
-            {productInfo.name}
-          </h1>
+          <Link href={`/products/${productInfo.productID}`}>
+            <h1 className="text-sm lg:text-base tracking-wide hover:underline">
+              {" "}
+              {productInfo.name}
+            </h1>
+          </Link>
           <h2 className="mt-1 uppercase text-xs tracking-wider">
             {productInfo.company}
           </h2>
