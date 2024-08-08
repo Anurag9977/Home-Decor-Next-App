@@ -494,10 +494,10 @@ export async function addProductToCart(
       amount: Number(amount),
     });
     await updateCart(cart);
+    return { message: "Product added to cart" };
   } catch (error) {
     return getError(error);
   }
-  redirect("/cart");
 }
 
 export async function deleteCartItem({ cartItemID }: { cartItemID: string }) {
@@ -514,7 +514,7 @@ export async function deleteCartItem({ cartItemID }: { cartItemID: string }) {
       },
     });
     await updateCart(cart);
-    revalidatePath("/cart");
+    //revalidatePath("/cart");
     return { message: "Cart item removed." };
   } catch (error) {
     return getError(error);
@@ -544,7 +544,7 @@ export async function editCartItem({
       },
     });
     await updateCart(cart);
-    revalidatePath("/cart");
+    //revalidatePath("/cart");
     return { message: "Product quantity updated." };
   } catch (error) {
     return getError(error);
