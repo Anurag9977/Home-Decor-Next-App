@@ -494,10 +494,10 @@ export async function addProductToCart(
       amount: Number(amount),
     });
     await updateCart(cart);
+    return { message: "Product added to cart" };
   } catch (error) {
     return getError(error);
   }
-  redirect("/cart");
 }
 
 export async function deleteCartItem({ cartItemID }: { cartItemID: string }) {
