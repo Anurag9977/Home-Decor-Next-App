@@ -22,7 +22,10 @@ function SingleCartItem({ productInfo, id, amount }: CartItemProps) {
   return (
     <article className="grid grid-cols-[2fr_1fr_1fr] gap-3 md:gap-4 border border-muted rounded-lg p-2 md:p-4 mb-4">
       <div className="flex gap-3 md:gap-4">
-        <Link href={`/products/${productInfo.productID}`}>
+        <Link
+          href={`/products/${productInfo.productID}`}
+          as={`/products/${productInfo.productID}`}
+        >
           <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-lg overflow-hidden">
             <Image
               src={productInfo.image}
