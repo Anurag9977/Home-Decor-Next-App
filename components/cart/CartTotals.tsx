@@ -3,15 +3,10 @@ import { Separator } from "../ui/separator";
 import { SubmitButton } from "../form/Buttons";
 import FormContainer from "../form/FormContainer";
 import { createOrder } from "@/utils/actions";
+import { Cart } from "@prisma/client";
 
-type CartTotalProps = {
-  cartTotal: number;
-  tax: number;
-  shipping: number;
-  orderTotal: number;
-};
-function CartTotals(props: CartTotalProps) {
-  const { cartTotal, tax, shipping, orderTotal } = props;
+function CartTotals({ cart }: { cart: Cart }) {
+  const { cartTotal, tax, shipping, orderTotal } = cart;
   return (
     <section>
       <article className="h-max p-4 rounded-lg border border-muted">
