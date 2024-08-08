@@ -17,18 +17,18 @@ async function CartPage() {
       <EmptyList text="You do not have any items in your cart currently." />
     );
 
-  // const cartTotalProps = {
-  //   cartTotal: currentCart.cartTotal,
-  //   tax: currentCart.tax,
-  //   shipping: currentCart.shipping,
-  //   orderTotal: currentCart.orderTotal,
-  // };
+  const cartTotalProps = {
+    cartTotal: currentCart.cartTotal,
+    tax: currentCart.tax,
+    shipping: currentCart.shipping,
+    orderTotal: currentCart.orderTotal,
+  };
   return (
     <main>
       <SectionTitle title="shopping cart" />
       <section className="mt-8 grid lg:grid-cols-[2fr_1fr] lg:gap-x-8 xl:gap-x-16 gap-y-8">
-        <CartItemList cartItems={cartItems} />
-        {/* <CartTotals {...cartTotalProps} /> */}
+        {/* <CartItemList cartItems={cartItems} /> */}
+        <CartTotals {...cartTotalProps} />
       </section>
     </main>
   );
