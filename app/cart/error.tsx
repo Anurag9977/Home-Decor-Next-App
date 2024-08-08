@@ -2,6 +2,6 @@
 
 function error({ error }: { error: Error }) {
   console.log(error);
-  return <div>error</div>;
+  return <div>cart error</div>;
 }
 export default error;
