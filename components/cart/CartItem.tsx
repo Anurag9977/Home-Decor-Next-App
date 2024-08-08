@@ -35,7 +35,6 @@ function SingleCartItem({ productInfo, id, amount }: CartItemProps) {
         <div>
           <Link href={`/products/${productInfo.productID}`}>
             <h1 className="text-sm lg:text-base tracking-wide hover:underline">
-              {" "}
               {productInfo.name}
             </h1>
           </Link>
